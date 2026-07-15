@@ -15,7 +15,8 @@ export const faqs = [
 
 export const contact = {
   email: 'hello@ksfarms.in',
-  address: 'Address details coming soon',
+  phone: '9390180366',
+  address: '18-1-419/A, 1st Floor, Bhavani Nagar Circle, Tiruapati - 517501',
   instagram: '@ksfarms.in',
   areas: 'Delivery areas to be confirmed on WhatsApp',
 }
