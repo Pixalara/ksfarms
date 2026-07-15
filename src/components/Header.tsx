@@ -9,6 +9,22 @@ const links = [
   ['Why KS Farms', '#why-us'], ['FAQ', '#faq'], ['Contact', '#contact'],
 ] as const
 
+const trustMessages = [
+  'Pure A1 Farm Milk',
+  'Fresh from Our Farm',
+  'Naturally Nourishing',
+  'Carefully Handled',
+  'Honest Everyday Goodness',
+  'Quality You Can Trust',
+  'Freshness Comes First',
+  'Transparent Order Totals',
+  'Direct from KS Farms',
+  'Local Doorstep Delivery',
+  'Google Maps Delivery Sharing',
+  'Direct WhatsApp Confirmation',
+  'Delivered with Personal Care',
+] as const
+
 export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -20,10 +36,12 @@ export function Header() {
   }, [])
   const close = () => setOpen(false)
   return <>
-    <div className="announcement" aria-label="KS Farms announcement"><div className="ticker">Fresh from our farm to your doorstep <span>•</span> Natural <span>•</span> Pure <span>•</span> Trusted</div></div>
+    <div className="announcement" aria-label={`KS Farms promises: ${trustMessages.join(', ')}`}>
+      <div className="announcement-track" aria-hidden="true">{[0, 1].map((group) => <div className="announcement-group" key={group}>{trustMessages.map((message) => <span className="announcement-item" key={`${group}-${message}`}><b>{message}</b><i>•</i></span>)}</div>)}</div>
+    </div>
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
       <nav className="nav shell" aria-label="Main navigation">
-        <a className="wordmark" href="#home" onClick={close}><img src="/ksfarms-logo-transparent.png" alt="KS Farms" /></a>
+        <a className="wordmark" href="#home" onClick={close}><img src="ksfarms-logo-transparent.png" alt="KS Farms" /></a>
         <div className="nav-links">{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</div>
         <button className="button button-dark header-cta" onClick={() => openWhatsApp(generalWhatsAppMessage)}><MessageCircle size={17} /> WhatsApp Us</button>
         <button className="menu-toggle" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>

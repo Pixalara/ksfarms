@@ -437,3 +437,18 @@ img,video,svg { max-width:100%; }
 @media (max-width:900px) { .bento-grid { grid-auto-rows:minmax(255px,auto); } .bento-card { min-height:255px; } }
 @media (max-width:560px) { .bento-grid { gap:12px; } .bento-card,.bento-wide,.bento-tall { min-height:255px; padding:22px; } .bento-card-top { margin-bottom:20px; } .bento-copy h3 { font-size:1.5rem; } .bento-copy p { font-size:.68rem; } .bento-points { margin-top:auto; } .bento-points li { font-size:.52rem; } }
 @media (max-width:360px) { .bento-card,.bento-wide,.bento-tall { min-height:270px; padding:19px; } .bento-points { align-items:stretch; flex-direction:column; } .bento-points li { width:max-content; } }
+
+/* Seamless premium trust-message marquee. */
+.announcement { align-items:center; display:flex; height:31px; overflow:hidden; position:relative; text-align:left; }
+.announcement::before,.announcement::after { content:''; height:100%; pointer-events:none; position:absolute; top:0; width:70px; z-index:2; }
+.announcement::before { background:linear-gradient(90deg,var(--forest-dark),transparent); left:0; }
+.announcement::after { background:linear-gradient(270deg,var(--forest-dark),transparent); right:0; }
+.announcement-track { align-items:center; animation:announcement-marquee 42s linear infinite; display:flex; flex:none; min-width:max-content; transform:translate3d(0,0,0); will-change:transform; }
+.announcement-group { align-items:center; display:flex; flex:none; min-width:max-content; }
+.announcement-item { align-items:center; color:#f6f1df; display:flex; flex:none; font-size:.58rem; font-weight:800; letter-spacing:.115em; line-height:31px; text-transform:uppercase; white-space:nowrap; }
+.announcement-item b { font-weight:800; }
+.announcement-item i { color:var(--gold); font-size:.56rem; font-style:normal; margin:0 19px; opacity:.95; }
+.announcement:hover .announcement-track { animation-play-state:paused; }
+@keyframes announcement-marquee { from { transform:translate3d(0,0,0); } to { transform:translate3d(-50%,0,0); } }
+@media (max-width:720px) { .announcement { height:29px; } .announcement::before,.announcement::after { width:34px; } .announcement-track { animation-duration:34s; } .announcement-item { font-size:.5rem; letter-spacing:.09em; line-height:29px; } .announcement-item i { margin:0 13px; } }
+@media (prefers-reduced-motion:reduce) { .announcement-track { animation:none; } .announcement-group:nth-child(2) { display:none; } }

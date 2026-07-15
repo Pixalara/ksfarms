@@ -36,10 +36,10 @@ export function HeroVideo() {
 
   return <div className="hero-video-shell">
     <div className={`hero-video-frame ${ready ? 'is-ready' : ''}`}>
-      <video ref={videoRef} autoPlay={!reduceMotion} muted loop playsInline preload="metadata" poster="/milkdoordelivery.jpeg"
+      <video ref={videoRef} autoPlay={!reduceMotion} muted loop playsInline preload="metadata" poster="milkdoordelivery.jpeg"
         onCanPlay={() => setReady(true)} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
         aria-label="KS Farms brand film">
-        <source src="/ksfarmswebsitevideo.mp4" type="video/mp4" />
+        <source src="ksfarmswebsitevideo.mp4" type="video/mp4" />
         Your browser does not support HTML video.
       </video>
     </div>
