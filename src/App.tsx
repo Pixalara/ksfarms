@@ -102,7 +102,7 @@ function App() {
         </nav>
       </div>
       <div className="shell footer-order-strip"><div><span>READY TO ORDER?</span><strong>Bring farm goodness home.</strong></div><button onClick={() => openWhatsApp(generalWhatsAppMessage)}><MessageCircle size={20} /> Order on WhatsApp <ArrowDown className="footer-order-arrow" size={17} /></button></div>
-      <div className="shell footer-bottom"><span>© 2026 KS Farms. Made with care.</span><span>Prices and availability may vary. Please confirm on WhatsApp.</span><a className="footer-credit" href="https://pixalara.com" target="_blank" rel="noopener noreferrer">Powered by Pixalara <small>(pixalara.com)</small></a></div>
+      <div className="shell footer-bottom"><span>© 2026 KS Farms. Made with care.</span><span>Prices and availability may vary. Please confirm on WhatsApp.</span><span className="footer-credit">Powered by <a href="https://pixalara.com" target="_blank" rel="noopener noreferrer">Pixalara.com</a></span></div>
     </footer>
     <button className="floating-wa" onClick={() => openWhatsApp(generalWhatsAppMessage)} aria-label="Order from KS Farms on WhatsApp"><span className="floating-wa-icon"><MessageCircle size={27} /></span><span className="floating-wa-label">Order on WhatsApp</span></button>
     <div className="mobile-action-bar"><a href="#products"><ShoppingBag size={18} /> Browse Products</a><button onClick={() => openWhatsApp(generalWhatsAppMessage)}><MessageCircle size={18} /> WhatsApp Us</button></div>
