@@ -81,7 +81,7 @@ function App() {
     <footer className="footer">
       <div className="footer-visual">
         <FooterFarmScene />
-        <div className="footer-cow-feature" aria-hidden="true"><img src="cow-footer.svg" alt="" /></div>
+        <motion.div className="footer-cow-feature" aria-hidden="true" initial={reduceMotion ? false : { opacity: 0, x: -72, y: 20, scale: .95 }} whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }} viewport={{ once: true, amount: .22 }} transition={{ duration: 1.4, ease: [0.22, 1, .36, 1] }}><img src="cow-footer.svg" alt="" /></motion.div>
         <div className="footer-farm-copy">
           <span>ROOTED IN TIRUPATI</span>
           <h2>Where green pastures meet<br /><em>everyday goodness.</em></h2>
