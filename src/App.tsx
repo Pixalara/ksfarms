@@ -79,6 +79,7 @@ function App() {
       <section id="contact" className="final-cta"><div className="shell"><Reveal className="final-cta-inner"><p className="eyebrow">BRING HOME THE GOODNESS</p><h2>Good food begins with<br /><em>good care.</em></h2><p>Send us a message and we will help you choose what feels right for your home.</p><div className="final-contact-details"><a href={`tel:+91${contact.phone}`}><Phone size={17} /> +91 {contact.phone}</a><address><MapPin size={17} /> {contact.address}</address></div><button className="button button-gold" onClick={() => openWhatsApp(generalWhatsAppMessage)}><MessageCircle size={19} /> Start an order on WhatsApp</button><div className="final-leaf"><Leaf /></div></Reveal></div></section>
     </main>
     <footer className="footer">
+      <div className="footer-cow-peek" aria-hidden="true"><img src="cow-footer.svg" alt="" /></div>
       <FooterFarmScene />
       <div className="footer-farm-copy">
         <span>ROOTED IN TIRUPATI</span>

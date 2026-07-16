@@ -529,3 +529,23 @@ main { position:relative; z-index:1; }
   .footer-main { padding-top:42px; }
 }
 @media (prefers-reduced-motion:reduce) { .farm-cloud,.farm-cow-head,.farm-cow-tail,.footer-grass-tufts { animation:none !important; } }
+
+/* Real cow cutout peeking over the illustrated footer. */
+.footer { margin-top:clamp(180px,20vw,270px); overflow:visible; }
+.footer-cow-peek { left:max(8px,calc((100% - 1240px)/2)); pointer-events:none; position:absolute; top:clamp(-370px,-26vw,-250px); width:clamp(310px,34vw,475px); z-index:4; }
+.footer-cow-peek::after { background:radial-gradient(ellipse,rgba(14,49,28,.28),transparent 68%); bottom:2%; content:''; height:12%; left:8%; position:absolute; width:78%; z-index:-1; }
+.footer-cow-peek img { animation:cow-footer-breathe 5.5s ease-in-out infinite; filter:drop-shadow(12px 18px 12px rgba(13,45,25,.2)); height:auto; transform-origin:34% 100%; width:100%; }
+.footer-farm-copy { left:auto; right:max(20px,calc((100% - 1160px)/2)); }
+@keyframes cow-footer-breathe { 0%,100% { rotate:-.35deg; translate:0 0; } 50% { rotate:.35deg; translate:0 -4px; } }
+@media (max-width:800px) {
+  .footer { margin-top:220px; }
+  .footer-cow-peek { left:-22px; top:-285px; width:365px; }
+  .footer-farm-copy { left:auto; right:20px; }
+}
+@media (max-width:560px) {
+  .footer { margin-top:175px; }
+  .footer-cow-peek { left:-38px; top:-220px; width:275px; }
+  .footer-farm-copy { left:14px; right:auto; top:68px; }
+}
+@media (max-width:380px) { .footer-cow-peek { left:-44px; width:255px; } }
+@media (prefers-reduced-motion:reduce) { .footer-cow-peek img { animation:none; } }
