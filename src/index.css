@@ -461,3 +461,71 @@ img,video,svg { max-width:100%; }
 .final-contact-details svg { color:var(--gold); flex:none; }
 .final-contact-details a:hover { background:rgba(255,255,255,.13); }
 @media (max-width:560px) { .final-contact-details { flex-direction:column; } .final-contact-details a,.final-contact-details address { flex:auto; font-size:.63rem; text-align:left; } .final-contact-details address { justify-content:flex-start; } }
+
+/* Animated farm landscape inspired by Tirupati's green village pastures. */
+.page-shell { background:linear-gradient(180deg,#fbf8f0 0%,#f3f4e9 48%,#fbf8f0 100%); isolation:isolate; position:relative; }
+.farm-theme-layer { inset:105px 0 0; opacity:.14; overflow:hidden; pointer-events:none; position:fixed; z-index:0; }
+.farm-theme-layer svg { height:100%; width:100%; }
+main { position:relative; z-index:1; }
+.footer { z-index:1; }
+.farm-cloud { fill:#fffdf0; opacity:.72; }
+.farm-theme-layer .cloud-one { animation:farm-cloud-drift 44s linear infinite; }
+.farm-theme-layer .cloud-two { animation:farm-cloud-drift 58s -24s linear infinite; opacity:.52; }
+.farm-theme-hill { stroke:rgba(23,61,42,.1); stroke-width:2; }
+.farm-theme-layer .hill-back { fill:#b9d5ac; }
+.farm-theme-layer .hill-front { fill:#82b47a; }
+.farm-village { fill:#315c3d; opacity:.64; }
+.farm-grass { fill:#5e9459; opacity:.72; }
+.farm-cow { color:#183522; }
+.farm-cow-head { animation:farm-graze 3.8s ease-in-out infinite; transform-box:fill-box; transform-origin:12% 38%; }
+.farm-cow-tail { animation:farm-tail 2.8s ease-in-out infinite; transform-box:fill-box; transform-origin:90% 5%; }
+.cow-delay .farm-cow-head { animation-delay:-1.5s; }
+.cow-delay-two .farm-cow-head { animation-delay:-2.4s; }
+.products { background:rgba(255,253,248,.9); }
+.story,.faq { background:rgba(241,234,220,.89); }
+.why-us { background:rgba(255,253,248,.91); }
+.testimonials,.final-cta { background:rgba(251,248,240,.9); }
+.hero { background:rgba(251,248,240,.7); }
+@keyframes farm-cloud-drift { from { translate:-340px 0; } to { translate:1550px 0; } }
+@keyframes farm-graze { 0%,100% { rotate:0deg; } 45%,60% { rotate:8deg; } }
+@keyframes farm-tail { 0%,100% { rotate:-3deg; } 50% { rotate:8deg; } }
+
+/* Illustrated pasture footer. */
+.footer { background:linear-gradient(180deg,#153d27 0 440px,#0b2a1c 440px,#0a2519 100%); padding:0 0 25px; }
+.footer::before { display:none; }
+.footer-farm-scene { height:440px; overflow:hidden; position:relative; width:100%; z-index:0; }
+.footer-farm-scene::after { background:linear-gradient(180deg,transparent 72%,rgba(11,42,28,.28)); content:''; inset:0; pointer-events:none; position:absolute; }
+.footer-farm-scene svg { height:100%; width:100%; }
+.footer-sky { fill:#acd9b2; }
+.footer-hill-back { fill:#69a95d; }
+.footer-hill-mid { fill:#8dca78; }
+.footer-field { fill:#59a952; }
+.footer-field-line { fill:none; opacity:.44; stroke:#dcebbf; stroke-linecap:round; stroke-width:15; }
+.footer-village .barn-roof,.footer-village .silo-top { fill:#294d31; }
+.footer-village .barn-wall,.footer-village .silo { fill:#f1eed7; }
+.footer-village .barn-door { fill:#d9d9bb; }
+.footer-village .barn-trim { fill:none; stroke:#496849; stroke-width:5; }
+.footer-farm-scene .farm-cow { color:#172d1d; filter:drop-shadow(7px 8px 3px rgba(17,50,28,.16)); }
+.footer-grass-tufts { animation:farm-grass-sway 4s ease-in-out infinite; fill:none; stroke:#e5e98e; stroke-linecap:round; stroke-width:5; transform-box:fill-box; transform-origin:bottom; }
+.footer-cloud { animation:footer-cloud-drift 38s linear infinite; }
+.footer-farm-copy { backdrop-filter:blur(8px); background:rgba(255,253,244,.83); border:1px solid rgba(255,255,255,.62); border-radius:22px; box-shadow:0 20px 50px rgba(20,55,32,.15); left:max(20px,calc((100% - 1160px)/2)); max-width:510px; padding:25px 29px 27px; position:absolute; top:55px; width:calc(100% - 40px); z-index:2; }
+.footer-farm-copy>span { color:#52704a; display:block; font-size:.54rem; font-weight:900; letter-spacing:.17em; margin-bottom:10px; }
+.footer-farm-copy h2 { color:var(--forest-dark); font-size:clamp(2.2rem,4vw,3.35rem); line-height:1; margin-bottom:12px; }
+.footer-farm-copy h2 em { color:#4f8148; }
+.footer-farm-copy p { color:#536653; font-size:.72rem; line-height:1.65; margin:0; max-width:410px; }
+.footer-glow { top:390px; }
+.footer-main { padding-top:64px; }
+@keyframes footer-cloud-drift { from { translate:-320px 0; } to { translate:1450px 0; } }
+@keyframes farm-grass-sway { 0%,100% { rotate:-1deg; } 50% { rotate:2deg; } }
+@media (max-width:800px) { .footer-farm-copy { max-width:460px; } .footer-main { padding-top:50px; } }
+@media (max-width:560px) {
+  .farm-theme-layer { inset:95px 0 0; opacity:.09; }
+  .footer { background:linear-gradient(180deg,#153d27 0 360px,#0b2a1c 360px,#0a2519 100%); padding:0 0 104px; }
+  .footer-farm-scene { height:360px; }
+  .footer-farm-copy { left:14px; padding:20px; top:24px; width:calc(100% - 28px); }
+  .footer-farm-copy h2 { font-size:2.18rem; }
+  .footer-farm-copy p { font-size:.65rem; max-width:310px; }
+  .footer-farm-scene svg { transform:scale(1.16); transform-origin:70% bottom; }
+  .footer-main { padding-top:42px; }
+}
+@media (prefers-reduced-motion:reduce) { .farm-cloud,.farm-cow-head,.farm-cow-tail,.footer-grass-tufts { animation:none !important; } }

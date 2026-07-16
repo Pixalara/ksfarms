@@ -3,6 +3,7 @@ import { ArrowDown, Check, ChevronDown, CookingPot, Droplets, HeartHandshake, Le
 import { WhatsAppIcon as MessageCircle } from './components/WhatsAppIcon'
 import { useState } from 'react'
 import { Header } from './components/Header'
+import { FarmBackdrop, FooterFarmScene } from './components/FarmLandscape'
 import { HeroVideo } from './components/HeroVideo'
 import { OrderModal } from './components/OrderModal'
 import { ProductCard } from './components/ProductCard'
@@ -38,6 +39,7 @@ function App() {
   const reduceMotion = useReducedMotion()
   const visibleProducts = filter === 'All' ? products : products.filter((product) => product.category === filter)
   return <div className="page-shell">
+    <FarmBackdrop />
     <Header />
     <main>
       <section id="home" className="hero">
@@ -77,6 +79,12 @@ function App() {
       <section id="contact" className="final-cta"><div className="shell"><Reveal className="final-cta-inner"><p className="eyebrow">BRING HOME THE GOODNESS</p><h2>Good food begins with<br /><em>good care.</em></h2><p>Send us a message and we will help you choose what feels right for your home.</p><div className="final-contact-details"><a href={`tel:+91${contact.phone}`}><Phone size={17} /> +91 {contact.phone}</a><address><MapPin size={17} /> {contact.address}</address></div><button className="button button-gold" onClick={() => openWhatsApp(generalWhatsAppMessage)}><MessageCircle size={19} /> Start an order on WhatsApp</button><div className="final-leaf"><Leaf /></div></Reveal></div></section>
     </main>
     <footer className="footer">
+      <FooterFarmScene />
+      <div className="footer-farm-copy">
+        <span>ROOTED IN TIRUPATI</span>
+        <h2>Where green pastures meet<br /><em>everyday goodness.</em></h2>
+        <p>A living farm story—pure A1 milk, thoughtful essentials, and personal doorstep care.</p>
+      </div>
       <div className="footer-glow" aria-hidden="true" />
       <div className="shell footer-main">
         <div className="footer-brand">
